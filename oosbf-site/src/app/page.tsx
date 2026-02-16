@@ -50,10 +50,12 @@ const scholarshipBlocks = [
 ];
 
 const benevolenceBlocks = [
-  { title: "Local Impact", text: "Supporting local families and children through our Que-mmunity Service initiative." },
-  { title: "One Yard, One Home", text: "Monthly service projects helping residents with yard work, repairs, and household needs." },
-  { title: "Service in Action", text: "Bridging the chapter and community through hands-on volunteerism and partnership." },
-  { title: "Community Outreach", text: "Engaging youth and families in educational and enrichment programs." },
+  { title: "Working for Widows", text: "Our Brothers provide yard work, home repairs, and maintenance for widows and seniors in the community, ensuring they can remain safely in their homes." },
+  { title: "One Yard, One Home", text: "Monthly service projects helping residents with yard work, repairs, and household needs across the Greater Daytona Beach area." },
+  { title: "Campus Cleanups", text: "Partnering with local schools and universities to beautify campuses, remove litter, and create cleaner learning environments for students." },
+  { title: "Adopt a Road", text: "We maintain adopted roadways through regular cleanups, keeping our community streets clean and demonstrating our commitment to civic responsibility." },
+  { title: "Community Outreach", text: "Engaging youth and families in educational programs, mentorship, and enrichment initiatives that strengthen our neighborhoods." },
+  { title: "Service in Action", text: "Bridging the chapter and community through hands-on volunteerism, food drives, and partnerships with local organizations." },
 ];
 
 const impactBlocks = [
@@ -74,25 +76,26 @@ function GoldLine({ full = false }: { full?: boolean }) {
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero / Header Section - Logo left, content right, gold divider */}
+      {/* Hero / Header Section */}
       <section className="relative overflow-hidden bg-white">
         <div className="curve-blob curve-blob-tr" />
-        <div className="relative flex min-h-[420px] flex-col lg:flex-row">
-          {/* Left panel - Logo (10% smaller, shifted left) */}
-          <div className="flex w-full shrink-0 flex-col items-center justify-center bg-transparent px-8 py-12 lg:w-96 lg:py-16">
-            <div className="relative -translate-x-4 h-[320px] w-[320px] lg:h-[373px] lg:w-[373px]">
+        <div className="relative flex min-h-[420px] flex-col">
+          <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-6 py-12 lg:px-12 lg:py-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-6 flex justify-center"
+            >
               <Image
-                src="/OOSBF_Logo.png"
-                alt="Omicron Omicron Scholarship and Benevolent Foundation"
-                fill
-                className="object-contain"
-                sizes="(max-width: 1024px) 320px, 373px"
+                src="/logo.png"
+                alt="Omicron Omicron Scholarship and Benevolence Fund Foundation"
+                width={686}
+                height={455}
+                className="h-[235px] w-auto sm:h-[314px] lg:h-[393px]"
                 priority
               />
-            </div>
-          </div>
-          {/* Right panel - Title, tagline, mission statements */}
-          <div className="flex flex-1 flex-col justify-center px-6 py-12 lg:pl-12 lg:py-16">
+            </motion.div>
             <motion.h1
               className="font-serif text-2xl font-bold text-royal-purple sm:text-3xl lg:text-4xl xl:text-5xl"
               initial={{ opacity: 0, y: 20 }}
@@ -101,7 +104,9 @@ export default function Home() {
             >
               Omicron Omicron
               <br />
-              Scholarship & Benevolent Foundation
+              Scholarship and Benevolence Fund
+              <br />
+              Foundation, Inc.
             </motion.h1>
             <motion.p
               className="mt-3 font-serif text-base font-bold text-gold lg:text-lg"
@@ -141,7 +146,7 @@ export default function Home() {
               transition={{ delay: 0.4 }}
             >
               <Link
-                href="#donate"
+                href="/donate"
                 className="inline-flex items-center justify-center rounded bg-royal-purple px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-royal-purple/90"
               >
                 Donate Now
@@ -269,7 +274,7 @@ export default function Home() {
             ))}
           </div>
           <Link
-            href="#"
+            href="/donate"
             className="mt-8 inline-flex items-center justify-center rounded bg-gold px-8 py-4 font-semibold text-royal-purple transition-colors hover:bg-gold-light"
           >
             Donate Now
@@ -289,88 +294,14 @@ export default function Home() {
 
       <SectionDivider />
 
-      {/* Get Involved & Contact Us */}
-      <section id="contact" className="relative overflow-hidden bg-white py-12 lg:py-20">
-        <div className="curve-blob curve-blob-tr" />
-        <div className="curve-blob curve-blob-br" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-            <div>
-              <h2 className="font-serif text-2xl font-bold text-stone-900 lg:text-3xl">
-                Get Involved & Contact Us
-              </h2>
-              <GoldLine />
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <div className="rounded bg-stone-50 p-4">
-                  <h3 className="font-semibold text-stone-900">Donate</h3>
-                  <p className="mt-1 text-sm text-stone-600">
-                    Support our mission through tax-deductible contributions. Every gift makes a difference.
-                  </p>
-                </div>
-                <div className="rounded bg-stone-50 p-4">
-                  <h3 className="font-semibold text-stone-900">Volunteer</h3>
-                  <p className="mt-1 text-sm text-stone-600">
-                    Partner with us in community service and educational initiatives.
-                  </p>
-                </div>
-                <div className="gold-line-full max-w-full" />
-                <div className="gold-line-full max-w-full" />
-              </div>
-              <p className="mt-6 text-sm font-medium text-stone-700">Email Inquiries:</p>
-              <a
-                href="mailto:OO.Foundation2011@gmail.com"
-                className="mt-1 inline-flex items-center gap-2 text-royal-purple hover:underline"
-              >
-                <Mail className="h-5 w-5" />
-                OO.Foundation2011@gmail.com
-              </a>
-            </div>
-            <div className="flex flex-wrap justify-center gap-4 lg:justify-end">
-              <div className="aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-lg lg:max-h-[320px]">
-                <Image
-                  src="/get-involved-community-service.png"
-                  alt="Omega Psi Phi brothers in community service - members in purple at a service project"
-                  width={420}
-                  height={560}
-                  className="h-full w-full object-cover object-center"
-                  sizes="280px"
-                />
-              </div>
-              <div className="aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-lg lg:max-h-[320px]">
-                <Image
-                  src="/essay-contest-2026.png"
-                  alt="2026 Omicron Omicron High School Essay Contest - Coming Soon!"
-                  width={420}
-                  height={560}
-                  className="h-full w-full object-cover object-center"
-                  sizes="280px"
-                />
-              </div>
-              <div className="aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-lg lg:max-h-[320px]">
-                <Image
-                  src="/donation-best-nation.png"
-                  alt="Donation is the best Nation"
-                  width={420}
-                  height={560}
-                  className="h-full w-full object-cover object-center"
-                  sizes="280px"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <SectionDivider />
-
       {/* Benevolence & Que-mmunity Service */}
       <section id="programs" className="relative overflow-hidden bg-white py-12 lg:py-20">
         <div className="curve-blob curve-blob-tr" />
         <div className="curve-blob curve-blob-bl" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:gap-12">
+          <div className="flex flex-col lg:flex-row lg:items-stretch lg:gap-12">
             {/* Article block - left */}
-            <div className="w-full shrink-0 lg:w-96">
+            <div className="flex w-full shrink-0 flex-col lg:w-96">
               <a
                 href="https://daytonaques.com"
                 target="_blank"
@@ -394,28 +325,31 @@ export default function Home() {
                   <Share2 className="h-5 w-5" />
                 </a>
               </div>
-              <div className="mt-4 overflow-hidden rounded-lg">
+              <div className="mt-4 overflow-hidden rounded-lg lg:min-h-0 lg:flex-1">
                 <Image
                   src="/que-mmunity-service-article.png"
                   alt="Local Omegas help widows through their Que-mmunity Service initiative - Daytona Times article"
                   width={800}
                   height={1200}
-                  className="h-auto w-full object-contain"
+                  className="h-auto w-full object-contain lg:h-full lg:object-contain lg:object-top"
                   sizes="(max-width: 1024px) 100vw, 384px"
                 />
               </div>
             </div>
             {/* Right content */}
-            <div className="flex-1 pt-8 lg:pt-0">
+            <div className="flex flex-1 flex-col pt-8 lg:pt-0 lg:min-w-0">
               <h2 className="font-serif text-2xl font-bold text-royal-purple lg:text-3xl">
                 Benevolence & Que-mmunity Service
               </h2>
               <GoldLine />
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <p className="mt-4 text-stone-600 leading-relaxed">
+                Through our Que-mmunity Service initiative, the Omicron Omicron Chapter puts brotherhood into action—supporting widows, maintaining our roads and campuses, and partnering with local families to build a stronger community.
+              </p>
+              <div className="mt-auto grid gap-6 pt-6 sm:grid-cols-2 lg:grid-cols-3">
                 {benevolenceBlocks.map((block, i) => (
-                  <div key={i} className="rounded bg-stone-50 p-4">
+                  <div key={i} className="rounded-lg border border-stone-100 bg-stone-50/50 p-4">
                     <h3 className="font-semibold text-stone-900">{block.title}</h3>
-                    <p className="mt-1 text-sm text-stone-600">{block.text}</p>
+                    <p className="mt-1.5 text-sm text-stone-600 leading-relaxed">{block.text}</p>
                   </div>
                 ))}
               </div>
@@ -431,7 +365,8 @@ export default function Home() {
         <div className="curve-blob curve-blob-tr" />
         <div className="curve-blob curve-blob-br" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
+          <div className="flex flex-col gap-8">
+            {/* Text content - always on top */}
             <div>
               <h2 className="font-serif text-2xl font-bold text-stone-900 lg:text-3xl">
                 Get Involved & Contact Us
@@ -462,8 +397,9 @@ export default function Home() {
                 OO.Foundation2011@gmail.com
               </a>
             </div>
-            <div className="flex flex-wrap justify-center gap-4 lg:justify-end">
-              <div className="aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-lg lg:max-h-[320px]">
+            {/* Three photos - always below text, stay in a row when stretched */}
+            <div className="flex flex-wrap justify-center gap-4">
+              <div className="aspect-[3/4] w-full max-w-[280px] shrink-0 overflow-hidden rounded-lg">
                 <Image
                   src="/get-involved-community-service.png"
                   alt="Omega Psi Phi brothers in community service - members in purple at a service project"
@@ -473,7 +409,7 @@ export default function Home() {
                   sizes="280px"
                 />
               </div>
-              <div className="aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-lg lg:max-h-[320px]">
+              <div className="aspect-[3/4] w-full max-w-[280px] shrink-0 overflow-hidden rounded-lg">
                 <Image
                   src="/essay-contest-2026.png"
                   alt="2026 Omicron Omicron High School Essay Contest - Coming Soon!"
@@ -483,7 +419,7 @@ export default function Home() {
                   sizes="280px"
                 />
               </div>
-              <div className="aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-lg lg:max-h-[320px]">
+              <div className="aspect-[3/4] w-full max-w-[280px] shrink-0 overflow-hidden rounded-lg">
                 <Image
                   src="/donation-best-nation.png"
                   alt="Donation is the best Nation"

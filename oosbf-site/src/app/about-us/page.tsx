@@ -174,7 +174,7 @@ export default function AboutUsPage() {
             Ready to support our mission?
           </p>
           <Link
-            href="/#donate"
+            href="/donate"
             className="mt-4 inline-flex rounded bg-royal-purple px-8 py-3 font-semibold text-white transition-colors hover:bg-royal-purple/90"
           >
             Donate Now

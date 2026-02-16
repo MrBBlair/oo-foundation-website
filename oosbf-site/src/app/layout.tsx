@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "The OOSBF is a 501(c)(3) non-profit providing scholarships to youth in the Greater Daytona Beach area and supporting community uplift through benevolent giving.",
   keywords: ["scholarship", "Daytona Beach", "501(c)(3)", "non-profit", "community", "Omega Psi Phi"],
   icons: {
-    icon: "/OOSBF_Logo.png",
+    icon: "/favicon.ico",
   },
 };
 
