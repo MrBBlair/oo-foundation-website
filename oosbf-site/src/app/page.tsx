@@ -12,6 +12,7 @@ import {
   Twitter,
   Share2,
 } from "lucide-react";
+import { ContactForm } from "@/components/ContactForm";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -388,14 +389,19 @@ export default function Home() {
                 <div className="gold-line-full max-w-full" />
                 <div className="gold-line-full max-w-full" />
               </div>
-              <p className="mt-6 text-sm font-medium text-stone-700">Email Inquiries:</p>
-              <a
-                href="mailto:OO.Foundation2011@gmail.com"
-                className="mt-1 inline-flex items-center gap-2 text-royal-purple hover:underline"
-              >
-                <Mail className="h-5 w-5" />
-                OO.Foundation2011@gmail.com
-              </a>
+              <p className="mt-6 text-sm font-medium text-stone-700">Send us a message:</p>
+              <div className="mt-4 max-w-xl">
+                <ContactForm />
+              </div>
+              <p className="mt-4 text-sm text-stone-500">
+                Or email directly:{" "}
+                <a
+                  href="mailto:OO.Foundation2011@gmail.com"
+                  className="text-royal-purple hover:underline"
+                >
+                  OO.Foundation2011@gmail.com
+                </a>
+              </p>
             </div>
             {/* Three photos - always below text, stay in a row when stretched */}
             <div className="flex flex-wrap justify-center gap-4">
