@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1c1917;
+  --royal-purple: #330066;
+  --gold: #CFB53B;
+  --old-gold: #CFB53B;
+  --gold-light: #d4c04a;
+  --gold-dark: #a89030;
+  --light-purple: #b8a9c9;
+  --light-purple-soft: rgba(184, 169, 201, 0.4);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-royal-purple: var(--royal-purple);
+  --color-gold: var(--gold);
+  --color-old-gold: var(--old-gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-light-purple: var(--light-purple);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Gold divider line - used under headings (old gold) */
+.gold-line {
+  height: 2px;
+  background: linear-gradient(90deg, var(--old-gold) 0%, var(--gold-dark) 100%);
+  width: 100%;
+  max-width: 120px;
+  margin-top: 0.5rem;
+}
+
+.gold-line-full {
+  height: 2px;
+  background: var(--old-gold);
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Vertical gold line */
+.gold-line-vertical {
+  width: 2px;
+  background: var(--old-gold);
+  min-height: 60px;
+  margin: 0 1.5rem;
+}
+
+/* Organic curved light purple shapes - original page motif */
+.curve-blob {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.curve-blob-tr {
+  top: -10%;
+  right: -5%;
+  width: 50%;
+  max-width: 500px;
+  height: 60%;
+  background: radial-gradient(ellipse at 80% 20%, var(--light-purple-soft) 0%, transparent 60%);
+}
+
+.curve-blob-br {
+  bottom: -10%;
+  right: -5%;
+  width: 45%;
+  max-width: 450px;
+  height: 50%;
+  background: radial-gradient(ellipse at 90% 80%, var(--light-purple-soft) 0%, transparent 55%);
+}
+
+.curve-blob-tl {
+  top: -10%;
+  left: -5%;
+  width: 40%;
+  max-width: 400px;
+  height: 55%;
+  background: radial-gradient(ellipse at 20% 25%, var(--light-purple-soft) 0%, transparent 60%);
+}
+
+.curve-blob-bl {
+  bottom: -10%;
+  left: -5%;
+  width: 35%;
+  max-width: 350px;
+  height: 45%;
+  background: radial-gradient(ellipse at 15% 85%, var(--light-purple-soft) 0%, transparent 55%);
+}
+
+/* Black section divider with spacing */
+.section-divider {
+  height: 6px;
+  background: #000;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+/* Mission statement divider - old gold, 3px (2px + 1pt) */
+.mission-divider {
+  height: 3px;
+  background: var(--old-gold);
+  width: 100%;
+}
