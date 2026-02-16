@@ -12,7 +12,6 @@ import {
   Twitter,
   Share2,
 } from "lucide-react";
-import { ContactForm } from "@/components/ContactForm";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -389,10 +388,13 @@ export default function Home() {
                 <div className="gold-line-full max-w-full" />
                 <div className="gold-line-full max-w-full" />
               </div>
-              <p className="mt-6 text-sm font-medium text-stone-700">Send us a message:</p>
-              <div className="mt-4 max-w-xl">
-                <ContactForm />
-              </div>
+              <p className="mt-6 text-sm font-medium text-stone-700">Email Inquiries:</p>
+              <Link
+                href="/contact"
+                className="mt-2 inline-flex items-center gap-2 rounded-md bg-royal-purple px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-royal-purple/90"
+              >
+                Contact Us
+              </Link>
               <p className="mt-4 text-sm text-stone-500">
                 Or email directly:{" "}
                 <a

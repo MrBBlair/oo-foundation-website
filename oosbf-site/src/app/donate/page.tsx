@@ -213,7 +213,7 @@ export default function DonatePage() {
             Questions about donating? We&apos;re here to help.
           </p>
           <Link
-            href="/#contact"
+            href="/contact"
             className="mt-4 inline-flex rounded bg-royal-purple px-8 py-3 font-semibold text-white transition-colors hover:bg-royal-purple/90"
           >
             Contact Us
