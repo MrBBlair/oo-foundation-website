@@ -17,7 +17,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-stone-200/80 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex flex-shrink-0 items-center">
+        <Link href="/" className="flex flex-shrink-0 items-center gap-2">
           <img
             src="/logo.png"
             alt="Omicron Omicron Scholarship and Benevolence Fund Foundation"
@@ -25,6 +25,9 @@ export function Navbar() {
             width={120}
             height={80}
           />
+          <span className="font-serif text-xl font-semibold tracking-tight text-royal-purple sm:text-2xl">
+            OOSBF
+          </span>
         </Link>
 
         {/* Desktop navigation */}
